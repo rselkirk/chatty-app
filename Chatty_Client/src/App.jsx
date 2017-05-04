@@ -3,6 +3,7 @@ import ChatBar from './ChatBar.jsx';
 import MessageList from './MessageList.jsx';
 
 let data = {
+      currentUser: {name: "Anonymous"},
       messages: []  
     }
 
@@ -11,11 +12,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = data;
-    this.id = 3;
-  }
-
-  get newId() {
-    return this.id++;
   }
 
   componentDidMount () {

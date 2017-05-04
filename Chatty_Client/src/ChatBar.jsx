@@ -32,7 +32,7 @@ class ChatBar extends Component {
   }
 
   submitUsername = (e) => {
-    console.log("Charbat submitUsername", this.state.username)
+    console.log("Charbar submitUsername", this.state.username)
       this.props.onNewUsername(this.state.username)
   }
 
