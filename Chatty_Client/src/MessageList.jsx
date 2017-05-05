@@ -3,17 +3,32 @@ import Message from './Message.jsx'
 
 
 class MessageList extends Component {
-  render() {
-    return (
-      <div>
-      {
-        this.props.messages.map(message => <Message
-            key={ message.id }
-            username={ message.username }
-            content={ message.content }
-          />)
+  render() { 
+
+    function setClassName (username) {
+      let classname = "message";
+      if (username === null) {
+        classname += " system";
       }
-      </div>
+      console.log('classname', classname);
+      return classname;
+    }
+
+    const messages = this.props.messages.map((message, i) => {
+      return (
+        <Message
+          cls={setClassName(message.username)}
+          key={ i }
+          username={ message.username || ''}
+          content={ message.content } 
+          />
+        )
+    });
+    
+    return (
+      <main className="messages">
+      { messages }
+      </main>
     );
   }
 };

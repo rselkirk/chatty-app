@@ -51,6 +51,10 @@ h1 {
       padding: 5px 20px;
     }
 
+    .message.system .message-username {
+      display: none;
+    }
+
     .message-content,
     .message-username {
       overflow: hidden;
@@ -88,4 +92,10 @@ h1 {
       line-height: 60px;
       padding: 0 10px;
       text-decoration: none;
+    }
+
+    .userCount {
+      float: right;
+      padding-top: 27px;
+      padding-right: 10px;
     }
