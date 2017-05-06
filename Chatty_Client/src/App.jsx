@@ -3,10 +3,10 @@ import ChatBar from './ChatBar.jsx';
 import MessageList from './MessageList.jsx';
 
 let data = {
-      currentUser: {name: "Anonymous"},
-      messages: [],
-      users: '0' 
-    }
+  currentUser: {name: "Anonymous"},
+  messages: [],
+  users: '0' 
+}
 
 class App extends Component {
 
@@ -16,10 +16,10 @@ class App extends Component {
   }
 
   componentDidMount () {
-      this.webSocket = new WebSocket("ws://localhost:3001/");
+    this.webSocket = new WebSocket("ws://localhost:3001/");
       
-      this.webSocket.onopen = (event) => {
-        console.log("Connected to Server");
+    this.webSocket.onopen = (event) => {
+      console.log("Connected to Server");
     };
 
     this.webSocket.onmessage = (event) => {
@@ -85,8 +85,8 @@ class App extends Component {
     return (
       <div>
         <nav className="navbar">
-            <a href="/" className="navbar-brand">Chatty</a>
-            <div className="userCount">{this.state.users} users online</div>
+          <a href="/" className="navbar-brand">Chatty</a>
+          <div className="userCount">{this.state.users} users online</div>
         </nav>
         <MessageList messages={this.state.messages} />
         <ChatBar username={this.state.username} onNewUsername={this.onNewUsername} onNewMessage={this.onNewMessage}/>
